@@ -1,10 +1,7 @@
 <resources>
   <string name="app_name">GR தேங்காய்</string>
   <string name="total_weight">மொத்த எடை</string>
-  <string name="total_waste">கழிவுகள்</string>
-  <string name="total_amount">மொத்த தொகை</string>
   <string name="total_coco">மொத்த தேங்காய்</string>
-  <string name="one_coco">ஒரு தேங்காய் விலை</string>
   <string name="price">விலை</string>
   <string name="check">    சரிபார்க்கவும்    </string>
 
