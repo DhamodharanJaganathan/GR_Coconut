@@ -9,6 +9,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
   TextView textView5;
   @BindView(R.id.textView6)
   TextView textView6;
+  @BindView(R.id.textView7)
+  TextView textView7;
 
 
   @Override
@@ -55,17 +58,23 @@ public class MainActivity extends AppCompatActivity {
 
     double piece_price = total_price / Integer.valueOf(editText3.getText().toString());
 
+    double avg_weight = c / Integer.valueOf(editText3.getText().toString());
+
+    double value = Double.parseDouble(new DecimalFormat("##.####").format(avg_weight));
+
     int a_1 = (int) Math.round(a);
     int a_2 = (int) Math.round(total_price);
+    //int a_3 = (int) Math.round(avg_weight);
 
     NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
 
     String moneyString = formatter.format(a_2);
     String one_coconut_price = formatter.format(piece_price);
 
-    textView4.setText("கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
+    textView4.setText("தேங்காய் ரோமம்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
     textView5.setText("மொத்த தொகை" + " : " + String.valueOf(moneyString));
     textView6.setText("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
+    textView7.setText("சராசரி எடை" + " : " + value + " " + "கிலோ");
 
   }
 
@@ -82,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
       editText3.requestFocus();
       editText3.setError("தவறு");
     } else {
-      try  {
-        InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+      try {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
       } catch (Exception e) {
 
