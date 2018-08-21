@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     String moneyString = formatter.format(a_2);
     String one_coconut_price = formatter.format(piece_price);
 
-    textView4.setText("தேங்காய் ரோமம்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
+    textView4.setText("தேங்காய் கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
     textView5.setText("மொத்த தொகை" + " : " + String.valueOf(moneyString));
     textView6.setText("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
     textView7.setText("சராசரி எடை" + " : " + value + " " + "கிலோ");
