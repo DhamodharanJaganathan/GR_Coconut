@@ -50,10 +50,10 @@
       android:layout_marginStart="20dp"
       android:layout_below="@+id/textView2"
       android:ems="5"
-      android:inputType="number"
-      android:maxLength="2"/>
+      android:inputType="numberDecimal"
+      android:maxLength="5"/>
 
-
+..
     <TextView
       android:id="@+id/textView3"
       android:textStyle="bold"

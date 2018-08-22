@@ -1,11 +1,16 @@
 package com.dhamodharan.myapplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,23 +43,35 @@ public class MainActivity extends AppCompatActivity {
   @BindView(R.id.textView7)
   TextView textView7;
 
+  SharedPreferences app_preferences;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-
+ /*   app_preferences =
+        PreferenceManager.getDefaultSharedPreferences(this);
+    String counter = app_preferences.getString("counter", "");
+    if (counter != null) {
+      editText2.setText(counter);
+    } else {
+      editText2.setText("");
+    }*/
 
   }
 
   private void calculation() {
 
+/*    SharedPreferences.Editor editor = app_preferences.edit();
+    editor.putString("counter", String.valueOf(editText2.getText().toString()));
+    editor.commit(); */
+
     double a = 0.03 * Integer.valueOf(editText1.getText().toString());
 
     double c = Integer.valueOf(editText1.getText().toString()) - a;
 
-    double total_price = c * Integer.valueOf(editText2.getText().toString());
+    double total_price = c * Double.valueOf(editText2.getText().toString());
 
     double piece_price = total_price / Integer.valueOf(editText3.getText().toString());
 
@@ -100,5 +117,30 @@ public class MainActivity extends AppCompatActivity {
       calculation();
     }
 
+  }
+
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.menu_main, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    switch (id) {
+      case R.id.menu_settings:
+        return true;
+      case R.id.menu_clear:
+        recreate();
+        editText1.getText().clear();
+        editText2.getText().clear();
+        editText3.getText().clear();
+        editText1.requestFocus();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
   }
 }
