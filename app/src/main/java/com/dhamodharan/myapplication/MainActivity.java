@@ -1,11 +1,15 @@
 package com.dhamodharan.myapplication;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +21,7 @@ import butterknife.OnClick;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
   @BindView(R.id.textView7)
   TextView textView7;
 
-  SharedPreferences app_preferences;
+  //SharedPreferences app_preferences;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -110,8 +115,10 @@ public class MainActivity extends AppCompatActivity {
     } else {
       try {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-      } catch (Exception e) {
+        if (imm != null) {
+          imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(), 0);
+        }
+      } catch (Exception ignored) {
 
       }
       calculation();
@@ -130,8 +137,6 @@ public class MainActivity extends AppCompatActivity {
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
     switch (id) {
-      case R.id.menu_settings:
-        return true;
       case R.id.menu_clear:
         recreate();
         editText1.getText().clear();
