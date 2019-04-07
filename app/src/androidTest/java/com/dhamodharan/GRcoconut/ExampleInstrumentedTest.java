@@ -1,4 +1,4 @@
-package com.dhamodharan.myapplication;
+package com.dhamodharan.GRcoconut;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

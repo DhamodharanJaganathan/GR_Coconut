@@ -1,4 +1,4 @@
-package com.dhamodharan.myapplication;
+package com.dhamodharan.GRcoconut;
 
 import org.junit.Test;
 
