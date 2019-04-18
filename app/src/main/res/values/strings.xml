@@ -7,6 +7,7 @@
   <string name="price">விலை</string>
   <string name="check">    சரிபார்க்கவும்    </string>
   <string name="wrong">தவறு</string>
+  <string name="wrong_vehicle_weight">வண்டி எடை தவறு</string>
 
 
 </resources>

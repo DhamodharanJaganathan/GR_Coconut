@@ -86,26 +86,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                if(s.length() != 0)
-                    if(editText10.length() != 0){
+                if (s.length() != 0) {
+                    if (editText10.length() != 0) {
 
                         try {
-                            double value = Double.parseDouble(String.valueOf(Integer.valueOf(editText1.getText().toString())-
+                            double value = Double.parseDouble(String.valueOf(Integer.valueOf(editText1.getText().toString()) -
                                     Integer.valueOf(editText10.getText().toString())));
 
-                            if(value<0){
+                            if (value < 0) {
                                 System.out.println(value + " is negative");
                                 Toast.makeText(MainActivity.this, R.string.wrong, Toast.LENGTH_SHORT).show();
                                 editText11.setText("");
-                            }
-                            else{
+                            } else {
                                 System.out.println(value + " is possitive");
-                                editText11.setText(String.valueOf(Integer.valueOf(editText1.getText().toString())-
+                                editText11.setText(String.valueOf(Integer.valueOf(editText1.getText().toString()) -
                                         Integer.valueOf(editText10.getText().toString())));
                             }
                         } catch (NumberFormatException e) {
                         }
                     }
+                }else{
+
+                    editText11.setText("");
+                }
             }
         });
 
@@ -123,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                if(s.length() != 0)
+                if(s.length() != 0){
                     if(editText1.length()!=0){
 
                         try {
@@ -132,8 +135,9 @@ public class MainActivity extends AppCompatActivity {
 
                             if(value<0){
                                 System.out.println(value + " is negative");
-                                Toast.makeText(MainActivity.this, R.string.wrong, Toast.LENGTH_SHORT).show();
                                 editText11.setText("");
+                                Toast.makeText(MainActivity.this, getString(R.string.wrong_vehicle_weight), Toast.LENGTH_SHORT).show();
+
                             }
                             else{
                                 System.out.println(value + " is possitive");
@@ -144,6 +148,9 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     }
+            }else{
+                    editText11.setText("");
+                }
             }
         });
 
@@ -200,8 +207,9 @@ public class MainActivity extends AppCompatActivity {
         editText10.setError("தவறு");
     }
     else if (editText11.length() == 0) {
-        editText11.requestFocus();
-        editText11.setError("தவறு");
+        //editText11.requestFocus();
+        //editText11.setError("தவறு");
+        Toast.makeText(this, getString(R.string.wrong), Toast.LENGTH_SHORT).show();
     } else if (editText2.length() == 0) {
       editText2.requestFocus();
       editText2.setError("தவறு");
