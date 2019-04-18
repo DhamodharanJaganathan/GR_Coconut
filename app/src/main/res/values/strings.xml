@@ -1,10 +1,12 @@
 <resources>
   <string name="app_name">GR தேங்காய்</string>
   <string name="total_weight">மொத்த எடை</string>
+  <string name="Vehicle_weight">வண்டி எடை</string>
+  <string name="coco_weight">தேங்காய் எடை</string>
   <string name="total_coco">மொத்த தேங்காய்</string>
   <string name="price">விலை</string>
   <string name="check">    சரிபார்க்கவும்    </string>
-
+  <string name="wrong">தவறு</string>
 
 
 </resources>
