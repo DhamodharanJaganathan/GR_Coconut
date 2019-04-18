@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView11;
     @BindView(R.id.editText11)
     EditText editText11;
-    @BindView(R.id.scrollView4)
-    ConstraintLayout scrollView4;
+
 
     //SharedPreferences app_preferences;
 
