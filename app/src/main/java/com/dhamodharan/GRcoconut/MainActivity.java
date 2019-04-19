@@ -185,13 +185,13 @@ public class MainActivity extends AppCompatActivity {
         textView4.setText("தேங்காய் கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
         textView5.setText("மொத்த தொகை" + " : " + String.valueOf(moneyString));
         textView6.setText("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
-        textView7.setText("சராசரி எடை" + " : " + value + " " + "கிலோ");
+        textView7.setText("சராசரி எடை" + " : " + String.valueOf(c) + " " + "கிராம்");
 
 
         System.out.println("தேங்காய் கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
         System.out.println("மொத்த தொகை" + " : " + String.valueOf(moneyString));
         System.out.println("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
-        System.out.println("சராசரி எடை" + " : " + value + " " + "கிலோ");
+        System.out.println("சராசரி எடை" + " : " + String.valueOf(c) + " " + "கிராம்");
     }
 
     @OnClick(R.id.button)
