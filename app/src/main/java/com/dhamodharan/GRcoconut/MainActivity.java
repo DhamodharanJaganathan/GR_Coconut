@@ -170,7 +170,26 @@ public class MainActivity extends AppCompatActivity {
 
         double avg_weight = c / Integer.valueOf(editText3.getText().toString());
 
-        double value = Double.parseDouble(new DecimalFormat("##.####").format(avg_weight));
+        if(avg_weight < 1){
+
+            String Str = new String(String.valueOf(avg_weight));
+
+            try {
+                textView7.setText(getString(R.string.avg_weight) + " : " + Str.substring(2, 5) + " " + getString(R.string.grams));
+            } catch (Exception e) {
+
+                textView7.setText(getString(R.string.avg_weight) + " : " + Str.substring(2, 4)+"0" + " " + getString(R.string.grams));
+            }
+
+        }else{
+
+            double value = Double.parseDouble(new DecimalFormat("##.###").format(avg_weight));
+            textView7.setText(getString(R.string.avg_weight) + " : " + String.valueOf(value) + " " + getString(R.string.Kilo));
+
+
+        }
+
+
 
         int a_1 = (int) Math.round(a);
         int a_2 = (int) Math.round(total_price);
@@ -184,13 +203,13 @@ public class MainActivity extends AppCompatActivity {
         textView4.setText(getString(R.string.Coconut_waste) + " : " + String.valueOf(a_1) + " " + getString(R.string.Kilo));
         textView5.setText(getString(R.string.total_amount) + " : " + String.valueOf(moneyString));
         textView6.setText(getString(R.string.One_coconut_price) + " : " + String.valueOf(one_coconut_price));
-        textView7.setText(getString(R.string.avg_weight) + " : " + String.valueOf(c) + " " + getString(R.string.grams));
 
 
         System.out.println(getString(R.string.Coconut_waste) + " : " + String.valueOf(a_1) + " " + getString(R.string.Kilo));
         System.out.println(getString(R.string.total_amount) + " : " + String.valueOf(moneyString));
         System.out.println(getString(R.string.One_coconut_price) + " : " + String.valueOf(one_coconut_price));
-        System.out.println(getString(R.string.avg_weight) + " : " + String.valueOf(c) + " " + getString(R.string.grams));
+
+
     }
 
     @OnClick(R.id.button)
