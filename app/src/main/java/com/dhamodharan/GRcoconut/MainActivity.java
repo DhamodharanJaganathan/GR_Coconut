@@ -1,7 +1,6 @@
 package com.dhamodharan.GRcoconut;
 
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -147,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     }
-            }else{
+                }else{
                     editText11.setText("");
                 }
             }
@@ -182,46 +181,46 @@ public class MainActivity extends AppCompatActivity {
         String moneyString = formatter.format(a_2);
         String one_coconut_price = formatter.format(piece_price);
 
-        textView4.setText("தேங்காய் கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
-        textView5.setText("மொத்த தொகை" + " : " + String.valueOf(moneyString));
-        textView6.setText("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
-        textView7.setText("சராசரி எடை" + " : " + String.valueOf(c) + " " + "கிராம்");
+        textView4.setText(getString(R.string.Coconut_waste) + " : " + String.valueOf(a_1) + " " + getString(R.string.Kilo));
+        textView5.setText(getString(R.string.total_amount) + " : " + String.valueOf(moneyString));
+        textView6.setText(getString(R.string.One_coconut_price) + " : " + String.valueOf(one_coconut_price));
+        textView7.setText(getString(R.string.avg_weight) + " : " + String.valueOf(c) + " " + getString(R.string.grams));
 
 
-        System.out.println("தேங்காய் கழிவுகள்" + " : " + String.valueOf(a_1) + " " + "கிலோ");
-        System.out.println("மொத்த தொகை" + " : " + String.valueOf(moneyString));
-        System.out.println("ஒரு தேங்காய் விலை" + " : " + String.valueOf(one_coconut_price));
-        System.out.println("சராசரி எடை" + " : " + String.valueOf(c) + " " + "கிராம்");
+        System.out.println(getString(R.string.Coconut_waste) + " : " + String.valueOf(a_1) + " " + getString(R.string.Kilo));
+        System.out.println(getString(R.string.total_amount) + " : " + String.valueOf(moneyString));
+        System.out.println(getString(R.string.One_coconut_price) + " : " + String.valueOf(one_coconut_price));
+        System.out.println(getString(R.string.avg_weight) + " : " + String.valueOf(c) + " " + getString(R.string.grams));
     }
 
     @OnClick(R.id.button)
     public void onViewClicked() {
 
-    if (editText1.length() == 0) {
-      editText1.requestFocus();
-      editText1.setError("தவறு");
-    }
-    else if (editText10.length() == 0) {
-        editText10.requestFocus();
-        editText10.setError("தவறு");
-    }
-    else if (editText11.length() == 0) {
-        //editText11.requestFocus();
-        //editText11.setError("தவறு");
-        Toast.makeText(this, getString(R.string.wrong), Toast.LENGTH_SHORT).show();
-    } else if (editText2.length() == 0) {
-      editText2.requestFocus();
-      editText2.setError("தவறு");
-    } else if (editText3.length() == 0) {
-      editText3.requestFocus();
-      editText3.setError("தவறு");
-    } else {
-      try {
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        if (imm != null) {
-          imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(), 0);
+        if (editText1.length() == 0) {
+            editText1.requestFocus();
+            editText1.setError(getString(R.string.wrong));
         }
-      } catch (Exception ignored) {
+        else if (editText10.length() == 0) {
+            editText10.requestFocus();
+            editText10.setError(getString(R.string.wrong));
+        }
+        else if (editText11.length() == 0) {
+            //editText11.requestFocus();
+            //editText11.setError("தவறு");
+            Toast.makeText(this, getString(R.string.wrong), Toast.LENGTH_SHORT).show();
+        } else if (editText2.length() == 0) {
+            editText2.requestFocus();
+            editText2.setError(getString(R.string.wrong));
+        } else if (editText3.length() == 0) {
+            editText3.requestFocus();
+            editText3.setError(getString(R.string.wrong));
+        } else {
+            try {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(), 0);
+                }
+            } catch (Exception ignored) {
 
             }
             calculation();

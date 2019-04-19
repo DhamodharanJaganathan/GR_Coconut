@@ -8,6 +8,12 @@
   <string name="check">    சரிபார்க்கவும்    </string>
   <string name="wrong">தவறு</string>
   <string name="wrong_vehicle_weight">வண்டி எடை தவறு</string>
+    <string name="Coconut_waste">தேங்காய் கழிவுகள்</string>
+  <string name="Kilo">கிலோ</string>
+  <string name="total_amount">மொத்த தொகை</string>
+  <string name="One_coconut_price">ஒரு தேங்காய் விலை</string>
+  <string name="avg_weight">சராசரி எடை</string>
+  <string name="grams">கிராம்</string>
 
 
 </resources>
