@@ -14,6 +14,16 @@
   <string name="One_coconut_price">ஒரு தேங்காய் விலை</string>
   <string name="avg_weight">சராசரி எடை</string>
   <string name="grams">கிராம்</string>
+  <string name="notes">குறிப்புகள்</string>
+  <string name="save_this">இதை சேமிக்கவும்</string>
+  <string name="thousand">ஆயிரம்</string>
+  <string name="saved">வெற்றிகரமாக சேமிக்கப்பட்டது</string>
+  <string name="deleted">வெற்றிகரமாக நீக்கப்பட்டது</string>
+  <string name="delete_all">அனைத்தும் வெற்றிகரமாக நீக்கப்பட்டன</string>
+  <string name="delete_all_alret">அனைத்தையும் நீக்கு</string>
+  <string name="delete_alret">இந்த விவரத்தை நீக்கு</string>
+  <string name="no">இல்லை</string>
+  <string name="yes">ஆம்</string>
 
 
 </resources>
